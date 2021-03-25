@@ -28,7 +28,6 @@ export class StudentService {
   ];
 
   getStudents(): Student[] {
-    console.log(this.students);
     return this.students;
   }
 }

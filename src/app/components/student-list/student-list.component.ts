@@ -7,9 +7,10 @@ import { StudentService } from 'src/app/services/student.service';
   templateUrl: './student-list.component.html',
   styleUrls: ['./student-list.component.css'],
 })
-export class StudentListComponent {
+export class StudentListComponent implements OnInit {
   students: Student[];
   constructor(private studentService: StudentService) {
     this.students = studentService.getStudents();
   }
+  ngOnInit(): void {}
 }

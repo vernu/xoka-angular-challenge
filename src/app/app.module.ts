@@ -13,9 +13,10 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 
 import { StudentListComponent } from './components/student-list/student-list.component';
+import { DepartmentListComponent } from './components/department-list/department-list.component';
 
 @NgModule({
-  declarations: [AppComponent, StudentListComponent],
+  declarations: [AppComponent, StudentListComponent, DepartmentListComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

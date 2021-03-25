@@ -14,9 +14,10 @@ import { MatButtonModule } from '@angular/material/button';
 
 import { StudentListComponent } from './components/student-list/student-list.component';
 import { DepartmentListComponent } from './components/department-list/department-list.component';
+import { CourseListComponent } from './components/course-list/course-list.component';
 
 @NgModule({
-  declarations: [AppComponent, StudentListComponent, DepartmentListComponent],
+  declarations: [AppComponent, StudentListComponent, DepartmentListComponent, CourseListComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Department } from 'src/app/models/department';
 import { DepartmentService } from 'src/app/services/department.service';
+import { StudentService } from 'src/app/services/student.service';
 
 @Component({
   selector: 'app-student-register-form',
@@ -10,16 +11,36 @@ import { DepartmentService } from 'src/app/services/department.service';
 export class StudentRegisterFormComponent implements OnInit {
   allDepartments: Department[];
 
+  id: number;
   name: String;
+  sex: String;
   department: Department;
+  departmentId: number;
 
-  constructor(private departmentService: DepartmentService) {
-    this.allDepartments = departmentService.getDepartments();
+  constructor(
+    private departmentService: DepartmentService,
+    private studentService: StudentService
+  ) {
+    // this.allDepartments = departmentService.getDepartments();
   }
 
-  ngOnInit(): void {}
-
-  registerStudent() {
-    console.log(this.name);
+  ngOnInit(): void {
+    this.departmentService.getDepartments().subscribe((departments) => {
+      this.allDepartments = departments;
+    });
   }
+
+  registerStudent(): void {
+    this.studentService.registerStudent({
+      id: this.id,
+      name: this.name,
+      sex: this.sex,
+      department: {
+        id: this.departmentId,
+      },
+    }).subscribe((student) => {
+      // this.loadStudents();
+    });
+  }
+
 }

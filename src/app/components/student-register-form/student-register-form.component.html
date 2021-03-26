@@ -2,6 +2,19 @@
   <mat-card>
     <form>
       <mat-form-field>
+        <mat-label>ID</mat-label>
+        <input
+          type="number"
+          matInput
+          [(ngModel)]="id"
+          name="id"
+          placeholder="student id (int)"
+          value=""
+          required
+        />
+      </mat-form-field>
+      <br />
+      <mat-form-field>
         <mat-label>Student Name</mat-label>
         <input
           matInput
@@ -9,15 +22,25 @@
           name="name"
           placeholder="Enter student's name"
           value=""
+          required
         />
       </mat-form-field>
 
       <br />
 
       <mat-form-field>
+        <mat-label>Sex</mat-label>
+        <mat-select name="sex" [(ngModel)]="sex" required>
+          <mat-option value="male"> Male </mat-option>
+          <mat-option value="female"> Female </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br />
+
+      <mat-form-field>
         <mat-label>Department</mat-label>
-        <mat-select>
-          <mat-option *ngFor="let dep of allDepartments" [value]="dep.name">
+        <mat-select name="departmentId" [(ngModel)]="departmentId" required>
+          <mat-option *ngFor="let dep of allDepartments" [value]="dep.id">
             {{ dep.name }}
           </mat-option>
         </mat-select>

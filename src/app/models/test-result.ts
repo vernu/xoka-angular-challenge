@@ -1,6 +1,6 @@
-import { Test } from "./test";
+import { Test } from './test';
 
-export class TestResult{
-    test: Test;
-    result: number;
+export class TestResult {
+  test: Test;
+  result: number;
 }

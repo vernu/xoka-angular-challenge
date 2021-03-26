@@ -1,39 +1,20 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Test } from '../models/test';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TestService {
-  constructor() {}
+  tests: Test[];
+  constructor(private http: HttpClient) {}
 
-  tests: Test[] = [
-    {
-      title: 'test 1',
-      content: 'test 1 content',
-      percentage: 15,
-    },
+  getTests(): Observable<Test[]> {
+    return this.http.get<Test[]>('/api/tests');
+  }
 
-    {
-      title: 'test 2',
-      content: 'test 2 content',
-      percentage: 20,
-    },
-
-    {
-      title: 'test 3',
-      content: 'test 3 content',
-      percentage: 25,
-    },
-
-    {
-      title: 'test 4',
-      content: 'test 4 content',
-      percentage: 30,
-    },
-  ];
-
-  getTests(): Test[] {
-    return this.tests;
+  deleteTest(testId): Observable<Test> {
+    return this.http.delete<Test>(`/api/tests/${testId}`);
   }
 }

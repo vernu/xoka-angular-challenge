@@ -10,8 +10,11 @@ import { DepartmentService } from 'src/app/services/department.service';
 export class DepartmentListComponent implements OnInit {
   departments: Department[];
   constructor(private departmentService: DepartmentService) {
-    this.departments = departmentService.getDepartments();
+    // this.departments = departmentService.getDepartments();
   }
-
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.departmentService.getDepartments().subscribe((departments) => {
+      this.departments = departments;
+    });
+  }
 }

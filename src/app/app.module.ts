@@ -21,6 +21,9 @@ import { CourseListComponent } from './components/course-list/course-list.compon
 import { StudentRegisterFormComponent } from './components/student-register-form/student-register-form.component';
 import { FormsModule } from '@angular/forms';
 import { TestListComponent } from './components/test-list/test-list.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { MemoryDbApi } from './components/memory-db-api/memory-db-api';
 
 @NgModule({
   declarations: [
@@ -45,6 +48,10 @@ import { TestListComponent } from './components/test-list/test-list.component';
     MatFormFieldModule,
     MatSelectModule,
     FormsModule,
+
+    
+   HttpClientModule,
+   HttpClientInMemoryWebApiModule.forRoot(MemoryDbApi),
   ],
   providers: [],
   bootstrap: [AppComponent],

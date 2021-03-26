@@ -1,5 +1,5 @@
 export class Course {
-  id: String;
+  id: number;
   name: String;
   creditHours: number;
   contactHours: number;

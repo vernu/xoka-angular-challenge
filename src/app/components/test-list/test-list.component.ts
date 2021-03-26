@@ -10,8 +10,21 @@ import { TestService } from 'src/app/services/test.service';
 export class TestListComponent implements OnInit {
   tests: Test[];
   constructor(private testService: TestService) {
-    this.tests = testService.getTests();
+    // this.tests = testService.getTests();
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.loadTests();
+  }
+  loadTests() {
+    this.testService.getTests().subscribe((tests) => {
+      this.tests = tests;
+    });
+  }
+
+  deleteTest(testId: number): void {
+    this.testService.deleteTest(testId).subscribe((test) => {
+      this.loadTests();
+    });
+  }
 }

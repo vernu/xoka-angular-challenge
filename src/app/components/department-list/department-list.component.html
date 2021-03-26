@@ -1,11 +1,11 @@
 <div>
-  <h1>Departments</h1>
+  <mat-card>
+    <h1>Departments</h1>
 
-  <div layout="row">
-    <span *ngFor="let dep of departments" class="dep-item">
-      {{ dep.name }}
-      <button mat-raised-button>Edit</button>
-      <button mat-raised-button color="warn">Delete</button>
-    </span>
-  </div>
+    <mat-chip-list>
+      <mat-chip color="accent" *ngFor="let dep of departments" class="dep-item">
+        {{ dep.name }}
+      </mat-chip>
+    </mat-chip-list>
+  </mat-card>
 </div>

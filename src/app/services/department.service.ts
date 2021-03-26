@@ -9,11 +9,9 @@ export class DepartmentService {
 
   departments: Department[] = [
     {
-      code: 'cs',
       name: 'Computer Science',
     },
     {
-      code: 'acc',
       name: 'Accounting',
     },
   ];

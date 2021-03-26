@@ -11,13 +11,24 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 import { StudentListComponent } from './components/student-list/student-list.component';
 import { DepartmentListComponent } from './components/department-list/department-list.component';
 import { CourseListComponent } from './components/course-list/course-list.component';
+import { StudentRegisterFormComponent } from './components/student-register-form/student-register-form.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent, StudentListComponent, DepartmentListComponent, CourseListComponent],
+  declarations: [
+    AppComponent,
+    StudentListComponent,
+    DepartmentListComponent,
+    CourseListComponent,
+    StudentRegisterFormComponent,
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -28,6 +39,10 @@ import { CourseListComponent } from './components/course-list/course-list.compon
     MatChipsModule,
     MatCardModule,
     MatButtonModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

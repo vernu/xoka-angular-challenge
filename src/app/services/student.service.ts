@@ -12,7 +12,6 @@ export class StudentService {
       name: 'isra el',
       sex: 'male',
       department: {
-        code: 'cs',
         name: 'Computer Science',
       },
     },
@@ -21,7 +20,6 @@ export class StudentService {
       sex: 'female',
 
       department: {
-        code: 'acc',
         name: 'Accounting',
       },
     },

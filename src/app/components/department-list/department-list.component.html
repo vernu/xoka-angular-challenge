@@ -2,7 +2,7 @@
   <h1>Departments</h1>
 
   <div layout="row">
-    <span *ngFor="let dep of departments">
+    <span *ngFor="let dep of departments" class="dep-item">
       {{ dep.name }}
       <button mat-raised-button>Edit</button>
       <button mat-raised-button color="warn">Delete</button>

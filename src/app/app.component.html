@@ -5,13 +5,21 @@
     </mat-toolbar-row>
   </mat-toolbar>
 
-  <div>
-    <app-student-register-form></app-student-register-form>
-    <app-student-list></app-student-list>
-    <app-department-list></app-department-list>
-    <app-course-list></app-course-list>
+  <mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-tile
+      ><app-student-register-form></app-student-register-form>
+      <app-student-list></app-student-list
+    ></mat-grid-tile>
+    <mat-grid-tile>
+      <div layout="column">
+        <app-department-list></app-department-list>
 
-    
-    <app-test-list></app-test-list>
-  </div>
+        <app-course-list> </app-course-list>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile> <app-test-list></app-test-list></mat-grid-tile>
+    <mat-grid-tile></mat-grid-tile>
+  </mat-grid-list>
+
+  <div></div>
 </div>

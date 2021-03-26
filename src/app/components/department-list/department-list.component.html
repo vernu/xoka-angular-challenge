@@ -1,11 +1,11 @@
 <div>
   <h1>Departments</h1>
-  <mat-list role="list">
-    <mat-list-item role="listitem" *ngFor="let dep of departments">
-      {{ dep.name }}
 
+  <div layout="row">
+    <span *ngFor="let dep of departments">
+      {{ dep.name }}
       <button mat-raised-button>Edit</button>
       <button mat-raised-button color="warn">Delete</button>
-    </mat-list-item>
-  </mat-list>
+    </span>
+  </div>
 </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Course } from 'src/app/models/course';
 import { CourseService } from 'src/app/services/course.service';
 
@@ -9,7 +10,10 @@ import { CourseService } from 'src/app/services/course.service';
 })
 export class CourseListComponent implements OnInit {
   courses: Course[];
-  constructor(private courseService: CourseService) {
+  constructor(
+    private courseService: CourseService,
+    private _snackBar: MatSnackBar
+  ) {
     // this.courses = courseService.getCourses();
   }
 
@@ -25,6 +29,7 @@ export class CourseListComponent implements OnInit {
   deleteCourse(courseId: number): void {
     this.courseService.deleteCourse(courseId).subscribe((course) => {
       this.loadCourses();
+      this._snackBar.open('course deleted', 'okay', { duration: 2000 });
     });
   }
 }

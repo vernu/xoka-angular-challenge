@@ -32,12 +32,38 @@ export class MemoryDbApi implements InMemoryDbService {
         id: 2,
         name: 'Accounting',
       },
+      {
+        id: 3,
+        name: 'Marketing',
+      },
+      {
+        id: 4,
+        name: 'Sociology',
+      },
     ];
 
     let courses = [
       {
         id: 1,
         name: 'OOSAD',
+        creditHours: 4,
+        contactHours: 5,
+      },
+      {
+        id: 2,
+        name: 'Networking',
+        creditHours: 4,
+        contactHours: 5,
+      },
+      {
+        id: 3,
+        name: 'Advanced Networking',
+        creditHours: 4,
+        contactHours: 5,
+      },
+      {
+        id: 4,
+        name: 'Wireless Networking ',
         creditHours: 4,
         contactHours: 5,
       },

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Test } from 'src/app/models/test';
 import { TestService } from 'src/app/services/test.service';
 
@@ -9,7 +10,10 @@ import { TestService } from 'src/app/services/test.service';
 })
 export class TestListComponent implements OnInit {
   tests: Test[];
-  constructor(private testService: TestService) {
+  constructor(
+    private testService: TestService,
+    private _snackBar: MatSnackBar
+  ) {
     // this.tests = testService.getTests();
   }
 
@@ -24,6 +28,7 @@ export class TestListComponent implements OnInit {
 
   deleteTest(testId: number): void {
     this.testService.deleteTest(testId).subscribe((test) => {
+      this._snackBar.open('test deleted', 'okay', { duration: 2000 });
       this.loadTests();
     });
   }

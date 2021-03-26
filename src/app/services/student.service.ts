@@ -16,10 +16,9 @@ export class StudentService {
   }
   registerStudent(studentData: Student): Observable<Student> {
     console.log(studentData);
-    return this.http.post<Student>(
-      '/api/students',studentData
-    );
+    return this.http.post<Student>('/api/students', studentData);
   }
+
   deleteStudent(studentId): Observable<Student> {
     console.log(studentId);
     return this.http.delete<Student>(`/api/students/${studentId}`);

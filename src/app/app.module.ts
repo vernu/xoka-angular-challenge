@@ -20,6 +20,7 @@ import { DepartmentListComponent } from './components/department-list/department
 import { CourseListComponent } from './components/course-list/course-list.component';
 import { StudentRegisterFormComponent } from './components/student-register-form/student-register-form.component';
 import { FormsModule } from '@angular/forms';
+import { TestListComponent } from './components/test-list/test-list.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { FormsModule } from '@angular/forms';
     DepartmentListComponent,
     CourseListComponent,
     StudentRegisterFormComponent,
+    TestListComponent,
   ],
   imports: [
     BrowserModule,

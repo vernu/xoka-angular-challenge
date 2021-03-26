@@ -14,6 +14,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { StudentListComponent } from './components/student-list/student-list.component';
 import { DepartmentListComponent } from './components/department-list/department-list.component';
@@ -23,7 +24,7 @@ import { FormsModule } from '@angular/forms';
 import { TestListComponent } from './components/test-list/test-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { MemoryDbApi } from './components/memory-db-api/memory-db-api';
+import { MemoryDbApi } from './services/memory-db-api/memory-db-api';
 
 @NgModule({
   declarations: [
@@ -48,10 +49,10 @@ import { MemoryDbApi } from './components/memory-db-api/memory-db-api';
     MatFormFieldModule,
     MatSelectModule,
     FormsModule,
+    MatSnackBarModule,
 
-    
-   HttpClientModule,
-   HttpClientInMemoryWebApiModule.forRoot(MemoryDbApi),
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(MemoryDbApi),
   ],
   providers: [],
   bootstrap: [AppComponent],

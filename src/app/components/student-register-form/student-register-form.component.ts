@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Department } from 'src/app/models/department';
 import { DepartmentService } from 'src/app/services/department.service';
 import { StudentService } from 'src/app/services/student.service';
@@ -19,7 +20,8 @@ export class StudentRegisterFormComponent implements OnInit {
 
   constructor(
     private departmentService: DepartmentService,
-    private studentService: StudentService
+    private studentService: StudentService,
+    private _snackBar: MatSnackBar
   ) {
     // this.allDepartments = departmentService.getDepartments();
   }
@@ -31,16 +33,17 @@ export class StudentRegisterFormComponent implements OnInit {
   }
 
   registerStudent(): void {
-    this.studentService.registerStudent({
-      id: this.id,
-      name: this.name,
-      sex: this.sex,
-      department: {
-        id: this.departmentId,
-      },
-    }).subscribe((student) => {
-      // this.loadStudents();
-    });
+    this.studentService
+      .registerStudent({
+        id: this.id,
+        name: this.name,
+        sex: this.sex,
+        department: {
+          id: this.departmentId,
+        },
+      })
+      .subscribe((student) => {
+        this._snackBar.open('student registered', 'okay', { duration: 2000 });
+      });
   }
-
 }

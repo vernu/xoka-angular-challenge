@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Student } from 'src/app/models/student';
 import { StudentService } from 'src/app/services/student.service';
 
@@ -9,7 +10,10 @@ import { StudentService } from 'src/app/services/student.service';
 })
 export class StudentListComponent implements OnInit {
   students: Student[];
-  constructor(private studentService: StudentService) {
+  constructor(
+    private studentService: StudentService,
+    private _snackBar: MatSnackBar
+  ) {
     // this.students = studentService.getStudents();
   }
   ngOnInit(): void {
@@ -24,6 +28,7 @@ export class StudentListComponent implements OnInit {
 
   deleteStudent(studentId: number): void {
     this.studentService.deleteStudent(studentId).subscribe((student) => {
+      this._snackBar.open('student deleted', 'okay', { duration: 2000 });
       this.loadStudents();
     });
   }

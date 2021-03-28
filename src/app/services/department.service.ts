@@ -18,6 +18,16 @@ export class DepartmentService {
     return this.http.post<Department[]>('/api/departments', departmentData);
   }
 
+  updateDepartment(
+    depId: number,
+    departmentData: Department
+  ): Observable<Department> {
+    return this.http.put<Department>(
+      `/api/departments/${depId}`,
+      departmentData
+    );
+  }
+
   deleteDepartment(depId: number): Observable<Department> {
     return this.http.delete<Department>(`/api/departments/${depId}`);
   }

@@ -14,8 +14,12 @@ export class TestService {
     return this.http.get<Test[]>('/api/tests');
   }
 
-  addTest(testData): Observable<Test[]> {
+  addTest(testData: Test): Observable<Test[]> {
     return this.http.post<Test[]>('/api/tests', testData);
+  }
+
+  updateTest(testId: number, testData: Test): Observable<Test> {
+    return this.http.put<Test>(`/api/tests/${testId}`, testData);
   }
 
   deleteTest(testId: number): Observable<Test> {

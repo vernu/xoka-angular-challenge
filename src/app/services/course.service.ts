@@ -14,8 +14,11 @@ export class CourseService {
   getCourses(): Observable<Course[]> {
     return this.http.get<Course[]>('/api/courses');
   }
-  addCourse(courseData): Observable<Course> {
+  addCourse(courseData: Course): Observable<Course> {
     return this.http.post<Course>('/api/courses', courseData);
+  }
+  updateCourse(courseId: number, courseData: Course): Observable<Course> {
+    return this.http.put<Course>(`/api/courses/${courseId}`, courseData);
   }
   deleteCourse(courseId: number): Observable<Course> {
     return this.http.delete<Course>(`/api/courses/${courseId}`);

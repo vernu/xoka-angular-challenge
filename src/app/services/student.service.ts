@@ -15,8 +15,11 @@ export class StudentService {
     return this.http.get<Student[]>('/api/students');
   }
   registerStudent(studentData: Student): Observable<Student> {
-    console.log(studentData);
     return this.http.post<Student>('/api/students', studentData);
+  }
+
+  updateStudent(studentId: number, studentData:Student): Observable<Student> {
+    return this.http.put<Student>(`/api/students/${studentId}`, studentData);
   }
 
   deleteStudent(studentId): Observable<Student> {

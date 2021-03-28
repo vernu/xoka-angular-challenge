@@ -14,7 +14,11 @@ export class TestService {
     return this.http.get<Test[]>('/api/tests');
   }
 
-  deleteTest(testId): Observable<Test> {
+  addTest(testData): Observable<Test[]> {
+    return this.http.post<Test[]>('/api/tests', testData);
+  }
+
+  deleteTest(testId: number): Observable<Test> {
     return this.http.delete<Test>(`/api/tests/${testId}`);
   }
 }

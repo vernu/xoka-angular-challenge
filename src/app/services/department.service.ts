@@ -14,4 +14,11 @@ export class DepartmentService {
     return this.http.get<Department[]>('/api/departments');
   }
 
+  addDepartment(departmentData): Observable<Department[]> {
+    return this.http.post<Department[]>('/api/departments', departmentData);
+  }
+
+  deleteDepartment(depId: number): Observable<Department> {
+    return this.http.delete<Department>(`/api/departments/${depId}`);
+  }
 }

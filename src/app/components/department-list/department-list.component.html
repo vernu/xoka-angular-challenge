@@ -3,8 +3,14 @@
     <h1>Departments</h1>
 
     <mat-chip-list>
-      <mat-chip color="accent" *ngFor="let dep of departments" class="dep-item">
+      <mat-chip
+        color="accent"
+        *ngFor="let dep of departments"
+        class="dep-item"
+        (removed)="deleteDepartment(dep.id)"
+      >
         {{ dep.name }}
+        <mat-icon matChipRemove>remove</mat-icon>
       </mat-chip>
     </mat-chip-list>
   </mat-card>
